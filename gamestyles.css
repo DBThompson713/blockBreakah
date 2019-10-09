@@ -1,0 +1,67 @@
+@import url("https://fonts.googleapis.com/css?family=Orbitron&display=swap");
+
+body {
+  background: #000;
+  background-size: cover;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-family: "Orbitron", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.no_mobile {
+  width: 70%;
+  margin: 70% auto 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.game_content {
+  margin-top: 5%;
+  height: 100vh;
+  display: none;
+}
+@media (min-width: 800px) and (orientation: landscape) {
+  .game_content {
+    display: block;
+  }
+  .no_mobile {
+    display: none;
+  }
+}
+
+#gameboard {
+  background: #222;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #0095ff;
+  border-radius: 3px;
+}
+
+#reset {
+  color: #fff;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  margin-top: 20px;
+  text-transform: uppercase;
+  outline: none;
+  font-family: "Orbitron", sans-serif;
+}
+
+#reset:hover {
+  color: steelblue;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+}
+
+.yellow {
+  background: rgba(255, 255, 0, 0.3);
+}
+
+.red {
+  background: rgba(255, 0, 0, 0.3);
+}
