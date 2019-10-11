@@ -178,12 +178,28 @@ if (!isMobile()) {
       for (var r = 0; r < brickRowCount; r++) {
         var b = bricks[c][r];
         if (b.status == 1) {
-          if (
-            x > b.x &&
-            x < b.x + brickWidth &&
-            y > b.y &&
-            y < b.y + brickHeight
-          ) {
+
+          testX = x;
+          testY = y;
+
+          if (x < b.x)
+            testX = b.x; // left edge
+          else
+            if (x > b.x + brickWidth)
+              testX = b.x + brickWidth; // right edge
+
+          if (y < b.y)
+            testY = b.y; // top edge
+          else
+            if (y > b.y + brickHeight)
+              testY = b.y + brickHeight;  // bottom edge
+          
+          distX = x-testX;
+          distY = y-testY;
+          distance = Math.sqrt( (distX*distX) + (distY*distY) );
+
+          if (distance <= ballRadius)
+          {
             dy = -dy;
             b.status = 0;
             score++;
